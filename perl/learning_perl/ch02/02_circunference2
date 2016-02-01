@@ -1,13 +1,8 @@
 #!/usr/bin/perl
+use 5.010;
 use utf8;
 
 print "Enter a circle's radius: ";
 chomp($radius = <STDIN>);
-if ($radius < 0) {
-	print "Radius should be a positive number.";
-	$radius = 0;
-	print " Radius is now $radius\n";
-	
-}
 $circunference = 2 * 3.141592654 * $radius;
 print "The circunference of a circle with a radius of $radius is $circunference\n";
