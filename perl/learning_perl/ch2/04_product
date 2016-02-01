@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+use utf8;
+
+print "Enter a number: ";
+chomp($number1 = <STDIN>);
+print "Enter another number: ";
+chomp($number2 = <STDIN>);
+print "The product of $number1 and $number2 is " . $number1 * $number2 . "\n";

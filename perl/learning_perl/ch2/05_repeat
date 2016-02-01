@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+use utf8;
+
+print "Enter a string: ";
+$string = <STDIN>;
+print "Enter a number: ";
+chomp($number = <STDIN>);
+print $string x $number;
