@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+use 5.014;
+use warnings;
+use utf8;
+
+sub total {
+	my(@input) = @_;
+	while (@input > 1) {
+    	$input[0] += pop @input;
+    }
+    $input[0];
+}
+
+my @fred = qw(1 3 5 7 9);
+my $fred_total = &total(@fred);
+print "The total of \@fred is $fred_total.\n";
+
+print "Enter some numbers on separete lines (Control-D or Control-Z when finished): ";
+my $user_total = &total(<STDIN>);
+print "The total of those numbers is $user_total.\n";

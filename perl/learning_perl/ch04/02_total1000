@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+use 5.014;
+use warnings;
+use utf8;
+
+sub total {
+	my(@input) = @_;
+	while (@input > 1) {
+    	$input[0] += pop @input;
+    }
+    $input[0];
+}
+
+print "The total of 1 to 1000 is ", &total(1..1000), ".\n";

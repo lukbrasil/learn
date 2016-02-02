@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+use 5.014;
+use warnings;
+use utf8;
+
+sub greet {
+	my($person) = @_;
+	state @people;
+	print "Hi $person. ";
+	if (@people > 0) {
+		print "I've seen: @people\n";
+	} else {
+		print "You are the first one here!\n";		
+	}
+	push @people, $person;
+}
+
+&greet("Fred");
+&greet("Barney");
+&greet("Wilma");
+&greet("Betty");

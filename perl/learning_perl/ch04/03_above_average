@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+use 5.014;
+use warnings;
+use utf8;
+
+sub total {
+	my(@input) = @_;
+	while (@input > 1) {
+    	$input[0] += pop @input;
+    }
+    $input[0];
+}
+
+sub average {
+	my(@input) = @_;
+	&total(@input) / @input;
+}
+
+sub above_average {
+	my(@input) = @_;
+	my $average = &average(@input);
+	my @result;
+	foreach (@input) {
+		if ($_ > $average) {
+			push @result, $_;			
+		}
+	}
+	@result;
+}
+
+my @fred = above_average(1..10);
+print "\@fred is @fred\n";
+
+my @barney = &above_average(100, 1..10);
+print "\@barney is @barney\n";
