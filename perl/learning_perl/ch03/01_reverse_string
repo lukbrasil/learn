@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+use 5.010;
+use utf8;
+
+print "Enter a text. Use end-of-input (Control-D or Control-Z) to finish\n";
+@reverse_line = reverse <STDIN>;
+print "\nThe reverse order is:\n";
+print @reverse_line;

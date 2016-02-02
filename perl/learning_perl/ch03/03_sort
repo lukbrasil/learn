@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+use 5.010;
+use utf8;
+
+print "Enter a list of strings until end-of-input (Control-D or Control-Z)\n";
+@input = sort <STDIN>;
+
+print "Sorted list (by code point) is:\n", @input;
+
+print "Flating the sorted list is: ";
+chomp @input;
+foreach $string (@input) {	
+	print "$string ";
+}
+print "\n";

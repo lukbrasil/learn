@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+use 5.010;
+use utf8;
+
+@people = qw(fred betty barney dino wilma pebbles bam-bam);
+
+print "Enter a list of numbers (1 to ", scalar @people, "), one number per line.\nUse end-of-input (Control-D or Control-Z) to finish.\n";
+
+foreach $number (<STDIN>) {
+	print "$people[$number - 1] ";
+}
+print "\n";
