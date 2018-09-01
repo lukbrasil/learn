@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/35c7d54d/gl3w.o \
+	${OBJECTDIR}/helper.o \
 	${OBJECTDIR}/main.o
 
 
@@ -69,6 +70,11 @@ ${OBJECTDIR}/_ext/35c7d54d/gl3w.o: ../../../../../gl3w/src/gl3w.c
 	${MKDIR} -p ${OBJECTDIR}/_ext/35c7d54d
 	${RM} "$@.d"
 	$(COMPILE.c) -g -I../../../../../gl3w/include -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/35c7d54d/gl3w.o ../../../../../gl3w/src/gl3w.c
+
+${OBJECTDIR}/helper.o: helper.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../../../../../gl3w/include -I../../../../../glfw/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/helper.o helper.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

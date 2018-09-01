@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>glHeader.h</itemPath>
+      <itemPath>helper.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,6 +15,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>../../../../../gl3w/src/gl3w.c</itemPath>
+      <itemPath>helper.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -58,6 +61,12 @@
       </compileType>
       <item path="../../../../../gl3w/src/gl3w.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="glHeader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="helper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="helper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -70,10 +79,18 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <standard>10</standard>
+          <incDir>
+            <pElem>../../../../../gl3w/include</pElem>
+          </incDir>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
-          <standard>11</standard>
+          <standard>8</standard>
+          <incDir>
+            <pElem>../../../../../gl3w/include</pElem>
+            <pElem>../../../../../glfw/include</pElem>
+          </incDir>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -81,8 +98,20 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>../../../../../glfw-build/src/libglfw3.a</linkerLibFileItem>
+          </linkerLibItems>
+          <commandLine>-ldl -lX11 -lXxf86vm -lXrandr -lXinerama -lXcursor -lpthread</commandLine>
+        </linkerTool>
       </compileType>
       <item path="../../../../../gl3w/src/gl3w.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="glHeader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="helper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="helper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
