@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/ba4716ed/gl3w.o \
+	${OBJECTDIR}/_ext/35c7d54d/gl3w.o \
 	${OBJECTDIR}/main.o
 
 
@@ -63,10 +63,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/e1_1: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/e1_1 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/_ext/ba4716ed/gl3w.o: ../../../gl3w/src/gl3w.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/ba4716ed
+${OBJECTDIR}/_ext/35c7d54d/gl3w.o: ../../../../../gl3w/src/gl3w.c
+	${MKDIR} -p ${OBJECTDIR}/_ext/35c7d54d
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/ba4716ed/gl3w.o ../../../gl3w/src/gl3w.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/35c7d54d/gl3w.o ../../../../../gl3w/src/gl3w.c
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

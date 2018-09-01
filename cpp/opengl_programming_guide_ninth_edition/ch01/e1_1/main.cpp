@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   main.cpp
  * Author: luk
  *
@@ -12,10 +12,10 @@
  */
 
 #include <GL/gl3w.h>
-#include <GL/glcorearb.h>
 #include <GLFW/glfw3.h>
-#include <cstdlib>
-#include <cstdio>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -35,22 +35,21 @@ void PrintShaderErrorLog(GLuint shader) {
     free(shaderErrorLog);
 }
 
+string loadShader(const GLchar * filename) {
+    ifstream file(filename);
+    string content;
+
+    if (file) {
+        string line;
+        while (getline(file, line)) {
+            content += line + '\n';
+        }
+    }
+
+    return content;
+}
+
 void init(void) {
-    GLchar const * vertex_shader_text =
-        "#version 300 es\r\n"
-        "layout (location = 0) in vec4 vPosition;\r\n"
-        "void main() {\r\n"
-        "  gl_Position = vPosition;\r\n"
-        "}\r\n";
-
-    GLchar const * fragment_shader_text =
-        "#version 300 es\r\n"
-        "precision mediump float;\r\n"
-        "layout (location = 0) out vec4 fColor;\r\n"
-        "void main() {\r\n"
-        "  fColor = vec4(0.5, 0.4, 0.8, 1.0);\r\n"
-        "}\r\n";
-
     const GLint vPosition = 0;
 
     static GLfloat vertices[][2] = {
@@ -77,7 +76,10 @@ void init(void) {
 
     // Initialize vertex shader
 
+    string vertex_shader_content = loadShader("vertex.glsl");
+    const GLchar * vertex_shader_text = vertex_shader_content.c_str();
     GLuint vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+    cout << vertex_shader_text;
     glShaderSource(vertex_shader, 1, &vertex_shader_text, NULL);
     glCompileShader(vertex_shader);
 
@@ -89,6 +91,9 @@ void init(void) {
 
     // Initialize fragment shader
 
+    string fragment_shader_content = loadShader("fragment.glsl");
+    const GLchar * fragment_shader_text = fragment_shader_content.c_str();
+    cout << fragment_shader_text;
     GLuint fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragment_shader, 1, &fragment_shader_text, NULL);
     glCompileShader(fragment_shader);
@@ -113,7 +118,7 @@ void init(void) {
         glGetProgramiv(program, GL_INFO_LOG_LENGTH, &maxLength);
         GLchar * shaderProgramInfoLog = (GLchar*) malloc(sizeof (GLchar) * (maxLength + 1));
         glGetProgramInfoLog(program, maxLength, &maxLength,
-            shaderProgramInfoLog);
+                shaderProgramInfoLog);
         shaderProgramInfoLog[maxLength] = '\0';
         printf(shaderProgramInfoLog);
         free(shaderProgramInfoLog);
@@ -135,7 +140,7 @@ void display(void) {
 }
 
 /*
- * 
+ *
  */
 int main(int argc, char** argv) {
     if (!gl3wInit() || !glfwInit()) {

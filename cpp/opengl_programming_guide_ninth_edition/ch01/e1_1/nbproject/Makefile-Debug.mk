@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/ba4716ed/gl3w.o \
+	${OBJECTDIR}/_ext/35c7d54d/gl3w.o \
 	${OBJECTDIR}/main.o
 
 
@@ -53,27 +53,27 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=../../../glfw-build/src/libglfw3.a
+LDLIBSOPTIONS=../../../../../glfw-build/src/libglfw3.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/e1_1
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/e1_1: ../../../glfw-build/src/libglfw3.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/e1_1: ../../../../../glfw-build/src/libglfw3.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/e1_1: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/e1_1 ${OBJECTFILES} ${LDLIBSOPTIONS} -ldl -lX11 -lXxf86vm -lXrandr -lXinerama -lXcursor -lpthread
 
-${OBJECTDIR}/_ext/ba4716ed/gl3w.o: ../../../gl3w/src/gl3w.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/ba4716ed
+${OBJECTDIR}/_ext/35c7d54d/gl3w.o: ../../../../../gl3w/src/gl3w.c
+	${MKDIR} -p ${OBJECTDIR}/_ext/35c7d54d
 	${RM} "$@.d"
-	$(COMPILE.c) -g -I../../../gl3w/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/ba4716ed/gl3w.o ../../../gl3w/src/gl3w.c
+	$(COMPILE.c) -g -I../../../../../gl3w/include -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/35c7d54d/gl3w.o ../../../../../gl3w/src/gl3w.c
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../glfw/include -I../../../gl3w/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../../../../../gl3w/include -I../../../../../glfw/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
