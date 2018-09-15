@@ -14,9 +14,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>e1_1.cpp</itemPath>
       <itemPath>../../../../../gl3w/src/gl3w.c</itemPath>
-      <itemPath>helper.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>utils.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -46,7 +47,7 @@
           </incDir>
         </cTool>
         <ccTool>
-          <standard>11</standard>
+          <standard>8</standard>
           <incDir>
             <pElem>../../../../../gl3w/include</pElem>
             <pElem>../../../../../glfw/include</pElem>
@@ -61,13 +62,15 @@
       </compileType>
       <item path="../../../../../gl3w/src/gl3w.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="glHeader.h" ex="false" tool="3" flavor2="0">
+      <item path="e1_1.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="helper.cpp" ex="false" tool="1" flavor2="0">
+      <item path="glHeader.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="helper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="utils.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -107,13 +110,15 @@
       </compileType>
       <item path="../../../../../gl3w/src/gl3w.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="glHeader.h" ex="false" tool="3" flavor2="0">
+      <item path="e1_1.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="helper.cpp" ex="false" tool="1" flavor2="0">
+      <item path="glHeader.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="helper.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="utils.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -25,6 +25,7 @@ namespace Types {
 namespace Utils {
     Types::string loadShader(const GLchar * filename);
     void printShaderErrorLog(GLuint shader);
+    void printContextInfo();
 }
 
 namespace Program {

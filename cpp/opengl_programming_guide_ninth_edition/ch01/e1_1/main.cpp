@@ -14,13 +14,19 @@
 #include "glHeader.h"
 #include "helper.h"
 
-/*
- *
- */
 int main(int argc, char** argv) {
-    if (!gl3wInit() || !glfwInit()) {
+    if (!(gl3wInit() && glfwInit())) {
         exit(EXIT_FAILURE);
     }
+
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_API);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+
+    glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_FALSE);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_FALSE);
+    glfwWindowHint(GLFW_CONTEXT_ROBUSTNESS, GLFW_NO_ROBUSTNESS);
 
     GLFWwindow* window = glfwCreateWindow(640, 480, "Test", NULL, NULL);
 
@@ -31,6 +37,8 @@ int main(int argc, char** argv) {
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
+
+    Utils::printContextInfo();
 
     Program::init();
     while (!glfwWindowShouldClose(window)) {

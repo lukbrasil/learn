@@ -36,8 +36,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/35c7d54d/gl3w.o \
-	${OBJECTDIR}/helper.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/e1_1.o \
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/utils.o
 
 
 # C Compiler Flags
@@ -71,15 +72,20 @@ ${OBJECTDIR}/_ext/35c7d54d/gl3w.o: ../../../../../gl3w/src/gl3w.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -I../../../../../gl3w/include -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/35c7d54d/gl3w.o ../../../../../gl3w/src/gl3w.c
 
-${OBJECTDIR}/helper.o: helper.cpp
+${OBJECTDIR}/e1_1.o: e1_1.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../gl3w/include -I../../../../../glfw/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/helper.o helper.cpp
+	$(COMPILE.cc) -g -I../../../../../gl3w/include -I../../../../../glfw/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/e1_1.o e1_1.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../gl3w/include -I../../../../../glfw/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../../../../../gl3w/include -I../../../../../glfw/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/utils.o: utils.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../../../../../gl3w/include -I../../../../../glfw/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/utils.o utils.cpp
 
 # Subprojects
 .build-subprojects:
